@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love for My Queen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #ffebee, #f8bbd9, #fff8e1);
+            color: #4a4a4a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Dancing Script', cursive;
+            color: #e91e63;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section {
+            padding: 80px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(255, 235, 238, 0.8), rgba(248, 187, 217, 0.8)), url('https://source.unsplash.com/random/1200x800/?romantic,couple') no-repeat center/cover;
+            color: white;
+            text-align: center;
+            position: relative;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(233, 30, 99, 0.3); }
+            to { box-shadow: 0 0 40px rgba(233, 30, 99, 0.6); }
+        }
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .hero img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #ffd700;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .about .content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .about img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 3px solid #e91e63;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+        .about .text-cards {
+            flex: 1;
+        }
+        .text-card {
+            background: linear-gradient(135deg, #fff8e1, #ffebee);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .text-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Love Story Section */
+        .love-story {
+            background: rgba(248, 187, 217, 0.8);
+            border-radius: 20px;
+            margin: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e91e63;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            animation: slideIn 1s ease-out;
+        }
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .timeline-item .icon {
+            width: 60px;
+            height: 60px;
+            background: #ffd700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            margin: 0 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-item .content {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            flex: 1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Gallery Section - 74 ROMANTIC FRAMES COLLAGE + SLIDESHOW */
+        .gallery {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .collage-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 800px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #ffebee, #f8bbd9);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.2);
+            padding: 20px;
+        }
+        .romantic-frame {
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 3px solid #e91e63;
+        }
+        .romantic-frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(233, 30, 99, 0.3);
+            z-index: 100;
+        }
+        .romantic-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 700px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 5px solid #e91e63;
+        }
+        .slideshow-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slideshow-image.active {
+            opacity: 1;
+        }
+        .slideshow-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+            flex-wrap: wrap;
+            max-width: 800px;
+            justify-content: center;
+        }
+        .slideshow-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .slideshow-dot.active {
+            background: #ffd700;
+        }
+        .audio-player {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .audio-player audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Special Message Section */
+        .message {
+            background: linear-gradient(135deg, #ffebee, #f8bbd9);
+            border-radius: 20px;
+            margin: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .message p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8em;
+            color: #e91e63;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            color: #e91e63;
+            animation: float 6s infinite linear;
+        }
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .heart:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .heart:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .heart:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .heart:nth-child(6) { left: 60%; animation-delay: 5s; }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Footer */
+        footer {
+            background: #e91e63;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px 20px 0 0;
+            margin-top: 20px;
+        }
+        footer p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2em;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .about .content { flex-direction: column; text-align: center; }
+            .timeline-item { flex-direction: column; }
+            .timeline::before { display: none; }
+            .slideshow-container { height: 400px; }
+            .collage-container { height: 600px; }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="section hero">
+        <div class="container">
+            <h1>Welcome, My Queen Bari</h1>
+            <p>Happy Birthday My love Manny Manny Happy Returns of the Day</p>
+            <img src="crop28.png" alt="My Wife">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about">
+        <div class="container">
+            <h2>About My Wife</h2>
+            <div class="content">
+                <img src="crop57.png" alt="About Her">
+                <div class="text-cards">
+                    <div class="text-card">
+                        <h3>Her Grace</h3>
+                        <p>Your grace turns every ordinary moment into something truly magical my love💖.</p>
+                    </div>
+                    <div class="text-card">
+                        <h3>Her Smile</h3>
+                        <p>Your smile is so beautiful that it lights up my heart and makes everything feel perfect😊❤️✨.</p>
+                    </div>
+                    <div class="text-card">
+                        <h3>Her Heart</h3>
+                        <p>Her heart is so pure and beautiful that it fills my life with love, peace, and endless happiness💖✨🌸.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Story Section -->
+    <section class="section love-story">
+        <div class="container">
+            <h2>Our Love Story</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="icon">💞</div>
+                    <div class="content">
+                        <h3>First Meeting</h3>
+                        <p>I still remember the day I saw you for the first time at the academy😊💖.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">✨</div>
+                    <div class="content">
+                        <h3>Our First Date</h3>
+                        <p>Our first date was the day we got caught, and remembering it still makes me feel sad and laugh at the same time😂💖.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">🌙</div>
+                    <div class="content">
+                        <h3>Proposal</h3>
+                        <p>The first time I wrote your name in my poetry diary, I gave it to you to read at the academy, and then I quietly took that special page back😊💖.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">💍</div>
+                    <div class="content">
+                        <h3>Our Wedding</h3>
+                        <p>In Sha Allah, we will have our Nikah very soon with lots of happiness and love🤍✨💍😊.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section - 74 ROMANTIC FRAMES COLLAGE + SLIDESHOW -->
+    <section class="section gallery">
+        <div class="container">
+            <h2>Our Beautiful Moments - 74 Memories Together</h2>
+            
+            <!-- Romantic Collage with 74 Frames - FIXED LAYOUT -->
+            <div class="collage-container">
+                <!-- Row 1: Frames 1-6 -->
+                <div class="romantic-frame" style="top: 20px; left: 20px; width: 180px; height: 140px;">
+                    <img src="1.jpg" alt="Memory 1">
+                </div>
+                <div class="romantic-frame" style="top: 20px; left: 220px; width: 160px; height: 120px;">
+                    <img src="2.jpg" alt="Memory 2">
+                </div>
+                <div class="romantic-frame" style="top: 20px; left: 400px; width: 200px; height: 160px;">
+                    <img src="3.jpg" alt="Memory 3">
+                </div>
+                <div class="romantic-frame" style="top: 20px; left: 620px; width: 140px; height: 110px;">
+                    <img src="4.jpg" alt="Memory 4">
+                </div>
+                <div class="romantic-frame" style="top: 20px; left: 780px; width: 170px; height: 130px;">
+                    <img src="5.jpg" alt="Memory 5">
+                </div>
+                <div class="romantic-frame" style="top: 20px; left: 970px; width: 150px; height: 115px;">
+                    <img src="6.jpg" alt="Memory 6">
+                </div>
+                
+                <!-- Row 2: Frames 7-13 -->
+                <div class="romantic-frame" style="top: 180px; left: 20px; width: 120px; height: 90px;">
+                    <img src="7.jpg" alt="Memory 7">
+                </div>
+                <div class="romantic-frame" style="top: 180px; left: 160px; width: 190px; height: 145px;">
+                    <img src="8.jpg" alt="Memory 8">
+                </div>
+                <div class="romantic-frame" style="top: 180px; left: 370px; width: 130px; height: 100px;">
+                    <img src="9.jpg" alt="Memory 9">
+                </div>
+                <div class="romantic-frame" style="top: 180px; left: 520px; width: 180px; height: 140px;">
+                    <img src="10.jpg" alt="Memory 10">
+                </div>
+                <div class="romantic-frame" style="top: 180px; left: 720px; width: 110px; height: 85px;">
+                    <img src="11.jpg" alt="Memory 11">
+                </div>
+                <div class="romantic-frame" style="top: 180px; left: 850px; width: 160px; height: 125px;">
+                    <img src="12.jpg" alt="Memory 12">
+                </div>
+                <div class="romantic-frame" style="top: 180px; left: 1030px; width: 130px; height: 100px;">
+                    <img src="13.jpg" alt="Memory 13">
+                </div>
+                
+                <!-- Row 3: Frames 14-20 -->
+                <div class="romantic-frame" style="top: 340px; left: 20px; width: 150px; height: 115px;">
+                    <img src="14.jpg" alt="Memory 14">
+                </div>
+                <div class="romantic-frame" style="top: 340px; left: 190px; width: 140px; height: 110px;">
+                    <img src="15.jpg" alt="Memory 15">
+                </div>
+                <div class="romantic-frame" style="top: 340px; left: 350px; width: 200px; height: 155px;">
+                    <img src="16.jpg" alt="Memory 16">
+                </div>
+                <div class="romantic-frame" style="top: 340px; left: 570px; width: 125px; height: 95px;">
+                    <img src="17.jpg" alt="Memory 17">
+                </div>
+                <div class="romantic-frame" style="top: 340px; left: 715px; width: 170px; height: 130px;">
+                    <img src="18.jpg" alt="Memory 18">
+                </div>
+                <div class="romantic-frame" style="top: 340px; left: 905px; width: 145px; height: 110px;">
+                    <img src="19.jpg" alt="Memory 19">
+                </div>
+                <div class="romantic-frame" style="top: 340px; left: 1070px; width: 110px; height: 85px;">
+                    <img src="20.jpg" alt="Memory 20">
+                </div>
+                
+                <!-- Row 4: Frames 21-27 -->
+                <div class="romantic-frame" style="top: 510px; left: 20px; width: 130px; height: 100px;">
+                    <img src="21.jpg" alt="Memory 21">
+                </div>
+                <div class="romantic-frame" style="top: 510px; left: 170px; width: 180px; height: 140px;">
+                    <img src="22.jpg" alt="Memory 22">
+                </div>
+                <div class="romantic-frame" style="top: 510px; left: 370px; width: 115px; height: 90px;">
+                    <img src="23.jpg" alt="Memory 23">
+                </div>
+                <div class="romantic-frame" style="top: 510px; left: 505px; width: 160px; height: 125px;">
+                    <img src="24.jpg" alt="Memory 24">
+                </div>
+                <div class="romantic-frame" style="top: 510px; left: 685px; width: 195px; height: 150px;">
+                    <img src="25.jpg" alt="Memory 25">
+                </div>
+                <div class="romantic-frame" style="top: 510px; left: 900px; width: 135px; height: 105px;">
+                    <img src="26.jpg" alt="Memory 26">
+                </div>
+                <div class="romantic-frame" style="top: 510px; left: 1055px; width: 125px; height: 95px;">
+                    <img src="27.jpg" alt="Memory 27">
+                </div>
+
+                <!-- Row 5: Frames 28-34 -->
+                <div class="romantic-frame" style="top: 670px; left: 20px; width: 165px; height: 125px;">
+                    <img src="28.jpg" alt="Memory 28">
+                </div>
+                <div class="romantic-frame" style="top: 670px; left: 205px; width: 120px; height: 90px;">
+                    <img src="29.jpg" alt="Memory 29">
+                </div>
+                <div class="romantic-frame" style="top: 670px; left: 345px; width: 185px; height: 140px;">
+                    <img src="30.jpg" alt="Memory 30">
+                </div>
+                <div class="romantic-frame" style="top: 670px; left: 550px; width: 140px; height: 110px;">
+                    <img src="31.jpg" alt="Memory 31">
+                </div>
+                <div class="romantic-frame" style="top: 670px; left: 710px; width: 175px; height: 135px;">
+                    <img src="32.jpg" alt="Memory 32">
+                </div>
+                <div class="romantic-frame" style="top: 670px; left: 905px; width: 155px; height: 120px;">
+                    <img src="33.jpg" alt="Memory 33">
+                </div>
+                <div class="romantic-frame" style="top: 670px; left: 1080px; width: 100px; height: 75px;">
+                    <img src="34.jpg" alt="Memory 34">
+                </div>
+
+                <!-- Small frames placed in empty spaces without overlapping -->
+                <div class="romantic-frame" style="top: 30px; left: 1150px; width: 40px; height: 40px;">
+                    <img src="35.jpg" alt="Memory 35">
+                </div>
+                <div class="romantic-frame" style="top: 90px; left: 1150px; width: 35px; height: 35px;">
+                    <img src="36.jpg" alt="Memory 36">
+                </div>
+                <div class="romantic-frame" style="top: 145px; left: 1150px; width: 45px; height: 45px;">
+                    <img src="37.jpg" alt="Memory 37">
+                </div>
+                <div class="romantic-frame" style="top: 210px; left: 1150px; width: 38px; height: 38px;">
+                    <img src="38.jpg" alt="Memory 38">
+                </div>
+                <div class="romantic-frame" style="top: 270px; left: 1150px; width: 42px; height: 42px;">
+                    <img src="39.jpg" alt="Memory 39">
+                </div>
+                <div class="romantic-frame" style="top: 330px; left: 1150px; width: 36px; height: 36px;">
+                    <img src="40.jpg" alt="Memory 40">
+                </div>
+                <div class="romantic-frame" style="top: 390px; left: 1150px; width: 44px; height: 44px;">
+                    <img src="41.jpg" alt="Memory 41">
+                </div>
+                <div class="romantic-frame" style="top: 450px; left: 1150px; width: 37px; height: 37px;">
+                    <img src="42.jpg" alt="Memory 42">
+                </div>
+                <div class="romantic-frame" style="top: 510px; left: 1150px; width: 40px; height: 40px;">
+                    <img src="43.jpg" alt="Memory 43">
+                </div>
+                <div class="romantic-frame" style="top: 570px; left: 1150px; width: 35px; height: 35px;">
+                    <img src="44.jpg" alt="Memory 44">
+                </div>
+                <div class="romantic-frame" style="top: 630px; left: 1150px; width: 42px; height: 42px;">
+                    <img src="45.jpg" alt="Memory 45">
+                </div>
+                <div class="romantic-frame" style="top: 690px; left: 1150px; width: 38px; height: 38px;">
+                    <img src="46.jpg" alt="Memory 46">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 1150px; width: 45px; height: 45px;">
+                    <img src="47.jpg" alt="Memory 47">
+                </div>
+                
+                <!-- Additional small frames placed in other empty areas -->
+                <div class="romantic-frame" style="top: 750px; left: 200px; width: 36px; height: 36px;">
+                    <img src="48.jpg" alt="Memory 48">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 260px; width: 40px; height: 40px;">
+                    <img src="49.jpg" alt="Memory 49">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 320px; width: 35px; height: 35px;">
+                    <img src="50.jpg" alt="Memory 50">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 380px; width: 42px; height: 42px;">
+                    <img src="51.jpg" alt="Memory 51">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 440px; width: 38px; height: 38px;">
+                    <img src="52.jpg" alt="Memory 52">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 500px; width: 44px; height: 44px;">
+                    <img src="53.jpg" alt="Memory 53">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 560px; width: 37px; height: 37px;">
+                    <img src="54.jpg" alt="Memory 54">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 620px; width: 40px; height: 40px;">
+                    <img src="55.jpg" alt="Memory 55">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 680px; width: 35px; height: 35px;">
+                    <img src="56.jpg" alt="Memory 56">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 740px; width: 42px; height: 42px;">
+                    <img src="57.jpg" alt="Memory 57">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 800px; width: 38px; height: 38px;">
+                    <img src="58.jpg" alt="Memory 58">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 860px; width: 45px; height: 45px;">
+                    <img src="59.jpg" alt="Memory 59">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 920px; width: 36px; height: 36px;">
+                    <img src="60.jpg" alt="Memory 60">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 980px; width: 40px; height: 40px;">
+                    <img src="61.jpg" alt="Memory 61">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 1040px; width: 35px; height: 35px;">
+                    <img src="62.jpg" alt="Memory 62">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 1100px; width: 42px; height: 42px;">
+                    <img src="63.jpg" alt="Memory 63">
+                </div>
+                <div class="romantic-frame" style="top: 750px; left: 1160px; width: 38px; height: 38px;">
+                    <img src="64.jpg" alt="Memory 64">
+                </div>
+                
+                <!-- Remaining small frames placed in other empty spaces -->
+                <div class="romantic-frame" style="top: 200px; left: 20px; width: 44px; height: 44px;">
+                    <img src="65.jpg" alt="Memory 65">
+                </div>
+                <div class="romantic-frame" style="top: 260px; left: 20px; width: 37px; height: 37px;">
+                    <img src="66.jpg" alt="Memory 66">
+                </div>
+                <div class="romantic-frame" style="top: 320px; left: 20px; width: 40px; height: 40px;">
+                    <img src="67.jpg" alt="Memory 67">
+                </div>
+                <div class="romantic-frame" style="top: 380px; left: 20px; width: 35px; height: 35px;">
+                    <img src="68.jpg" alt="Memory 68">
+                </div>
+                <div class="romantic-frame" style="top: 440px; left: 20px; width: 42px; height: 42px;">
+                    <img src="69.jpg" alt="Memory 69">
+                </div>
+                <div class="romantic-frame" style="top: 500px; left: 20px; width: 38px; height: 38px;">
+                    <img src="70.jpg" alt="Memory 70">
+                </div>
+                <div class="romantic-frame" style="top: 560px; left: 20px; width: 45px; height: 45px;">
+                    <img src="71.jpg" alt="Memory 71">
+                </div>
+                <div class="romantic-frame" style="top: 620px; left: 20px; width: 36px; height: 36px;">
+                    <img src="72.jpg" alt="Memory 72">
+                </div>
+                <div class="romantic-frame" style="top: 680px; left: 20px; width: 40px; height: 40px;">
+                    <img src="73.jpg" alt="Memory 73">
+                </div>
+                <div class="romantic-frame" style="top: 740px; left: 20px; width: 35px; height: 35px;">
+                    <img src="74.jpg" alt="Memory 74">
+                </div>
+            </div>
+
+            <!-- Individual Slideshow - 1.5 seconds per image -->
+            <h3 style="text-align: center; color: #e91e63; margin: 30px 0 20px; font-size: 2em;">♥ Individual Memories Slideshow ♥</h3>
+            <div class="slideshow-container">
+                <!-- All 74 Images for Individual Slideshow -->
+                <img src="1.jpg" alt="Memory 1" class="slideshow-image active">
+                <img src="2.jpg" alt="Memory 2" class="slideshow-image">
+                <img src="3.jpg" alt="Memory 3" class="slideshow-image">
+                <img src="4.jpg" alt="Memory 4" class="slideshow-image">
+                <img src="5.jpg" alt="Memory 5" class="slideshow-image">
+                <img src="6.jpg" alt="Memory 6" class="slideshow-image">
+                <img src="7.jpg" alt="Memory 7" class="slideshow-image">
+                <img src="8.jpg" alt="Memory 8" class="slideshow-image">
+                <img src="9.jpg" alt="Memory 9" class="slideshow-image">
+                <img src="10.jpg" alt="Memory 10" class="slideshow-image">
+                <img src="11.jpg" alt="Memory 11" class="slideshow-image">
+                <img src="12.jpg" alt="Memory 12" class="slideshow-image">
+                <img src="13.jpg" alt="Memory 13" class="slideshow-image">
+                <img src="14.jpg" alt="Memory 14" class="slideshow-image">
+                <img src="15.jpg" alt="Memory 15" class="slideshow-image">
+                <img src="16.jpg" alt="Memory 16" class="slideshow-image">
+                <img src="17.jpg" alt="Memory 17" class="slideshow-image">
+                <img src="18.jpg" alt="Memory 18" class="slideshow-image">
+                <img src="19.jpg" alt="Memory 19" class="slideshow-image">
+                <img src="20.jpg" alt="Memory 20" class="slideshow-image">
+                <img src="21.jpg" alt="Memory 21" class="slideshow-image">
+                <img src="22.jpg" alt="Memory 22" class="slideshow-image">
+                <img src="23.jpg" alt="Memory 23" class="slideshow-image">
+                <img src="24.jpg" alt="Memory 24" class="slideshow-image">
+                <img src="25.jpg" alt="Memory 25" class="slideshow-image">
+                <img src="26.jpg" alt="Memory 26" class="slideshow-image">
+                <img src="27.jpg" alt="Memory 27" class="slideshow-image">
+                <img src="28.jpg" alt="Memory 28" class="slideshow-image">
+                <img src="29.jpg" alt="Memory 29" class="slideshow-image">
+                <img src="30.jpg" alt="Memory 30" class="slideshow-image">
+                <img src="31.jpg" alt="Memory 31" class="slideshow-image">
+                <img src="32.jpg" alt="Memory 32" class="slideshow-image">
+                <img src="33.jpg" alt="Memory 33" class="slideshow-image">
+                <img src="34.jpg" alt="Memory 34" class="slideshow-image">
+                <img src="35.jpg" alt="Memory 35" class="slideshow-image">
+                <img src="36.jpg" alt="Memory 36" class="slideshow-image">
+                <img src="37.jpg" alt="Memory 37" class="slideshow-image">
+                <img src="38.jpg" alt="Memory 38" class="slideshow-image">
+                <img src="39.jpg" alt="Memory 39" class="slideshow-image">
+                <img src="40.jpg" alt="Memory 40" class="slideshow-image">
+                <img src="41.jpg" alt="Memory 41" class="slideshow-image">
+                <img src="42.jpg" alt="Memory 42" class="slideshow-image">
+                <img src="43.jpg" alt="Memory 43" class="slideshow-image">
+                <img src="44.jpg" alt="Memory 44" class="slideshow-image">
+                <img src="45.jpg" alt="Memory 45" class="slideshow-image">
+                <img src="46.jpg" alt="Memory 46" class="slideshow-image">
+                <img src="47.jpg" alt="Memory 47" class="slideshow-image">
+                <img src="48.jpg" alt="Memory 48" class="slideshow-image">
+                <img src="49.jpg" alt="Memory 49" class="slideshow-image">
+                <img src="50.jpg" alt="Memory 50" class="slideshow-image">
+                <img src="51.jpg" alt="Memory 51" class="slideshow-image">
+                <img src="52.jpg" alt="Memory 52" class="slideshow-image">
+                <img src="53.jpg" alt="Memory 53" class="slideshow-image">
+                <img src="54.jpg" alt="Memory 54" class="slideshow-image">
+                <img src="55.jpg" alt="Memory 55" class="slideshow-image">
+                <img src="56.jpg" alt="Memory 56" class="slideshow-image">
+                <img src="57.jpg" alt="Memory 57" class="slideshow-image">
+                <img src="58.jpg" alt="Memory 58" class="slideshow-image">
+                <img src="59.jpg" alt="Memory 59" class="slideshow-image">
+                <img src="60.jpg" alt="Memory 60" class="slideshow-image">
+                <img src="61.jpg" alt="Memory 61" class="slideshow-image">
+                <img src="62.jpg" alt="Memory 62" class="slideshow-image">
+                <img src="63.jpg" alt="Memory 63" class="slideshow-image">
+                <img src="64.jpg" alt="Memory 64" class="slideshow-image">
+                <img src="65.jpg" alt="Memory 65" class="slideshow-image">
+                <img src="66.jpg" alt="Memory 66" class="slideshow-image">
+                <img src="67.jpg" alt="Memory 67" class="slideshow-image">
+                <img src="68.jpg" alt="Memory 68" class="slideshow-image">
+                <img src="69.jpg" alt="Memory 69" class="slideshow-image">
+                <img src="70.jpg" alt="Memory 70" class="slideshow-image">
+                <img src="71.jpg" alt="Memory 71" class="slideshow-image">
+                <img src="72.jpg" alt="Memory 72" class="slideshow-image">
+                <img src="73.jpg" alt="Memory 73" class="slideshow-image">
+                <img src="74.jpg" alt="Memory 74" class="slideshow-image">
+
+                <!-- Slideshow Controls for 74 images -->
+                <div class="slideshow-controls">
+                    <span class="slideshow-dot active" onclick="currentSlide(1)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(2)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(3)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(4)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(5)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(6)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(7)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(8)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(9)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(10)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(11)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(12)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(13)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(14)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(15)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(16)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(17)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(18)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(19)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(20)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(21)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(22)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(23)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(24)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(25)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(26)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(27)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(28)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(29)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(30)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(31)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(32)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(33)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(34)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(35)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(36)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(37)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(38)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(39)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(40)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(41)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(42)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(43)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(44)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(45)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(46)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(47)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(48)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(49)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(50)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(51)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(52)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(53)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(54)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(55)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(56)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(57)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(58)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(59)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(60)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(61)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(62)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(63)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(64)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(65)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(66)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(67)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(68)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(69)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(70)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(71)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(72)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(73)"></span>
+                    <span class="slideshow-dot" onclick="currentSlide(74)"></span>
+                </div>
+            </div>
+            
+            <div class="audio-player">
+                <audio controls>
+                    <source src="mp3.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Message Section -->
+    <section class="section message">
+        <div class="container">
+            <h2>A Special Message</h2>
+            <p>My love, always stay happy 😊💖. May you always smile and never feel any lack. I will always be with you, my life, and I will never leave your side, never ever 😘✨. I promise I will always try to fulfill every wish of mine, every wish you want I will bring it to you 🎁💐. If you ever feel sad or worried, I will always be with you 🤗❤️. If you ever get upset, I will make you happy again 💕🌸. It's my duty to see you always smiling 😍💫. Since you came into my life, I truly started living 🌹💖. Love has taught me the real meaning of life, and what the world is about 🌍💞. I am so lucky that Allah made you mine 🙏💗. You are my everything, my world, my life 💎💖. Always stay happy, my darling, my love, my sweet heart 🥰💖💫. I love you, my queen 👑💖💐.</p>
+            <div class="hearts">
+                <div class="heart">❤️</div>
+                <div class="heart">💖</div>
+                <div class="heart">💕</div>
+                <div class="heart">💗</div>
+                <div class="heart">💓</div>
+                <div class="heart">💞</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made With Love by Your Husband Maher</p>
+        <div class="social-icons">
+            <a href="#">📘</a>
+            <a href="#">📷</a>
+            <a href="#">💌</a>
+        </div>
+    </footer>
+
+    <script>
+        // Professional Slideshow JavaScript
+        let slideIndex = 1;
+        let slideInterval;
+        const slides = document.querySelectorAll('.slideshow-image');
+        const dots = document.querySelectorAll('.slideshow-dot');
+        
+        // Initialize slideshow
+        function initSlideshow() {
+            showSlide(slideIndex);
+            startAutoSlideshow();
+        }
+        
+        // Show specific slide
+        function showSlide(n) {
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+            
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show current slide
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('active');
+        }
+        
+        // Next/Previous controls
+        function changeSlide(n) {
+            clearInterval(slideInterval);
+            slideIndex += n;
+            showSlide(slideIndex);
+            startAutoSlideshow();
+        }
+        
+        // Direct slide navigation
+        function currentSlide(n) {
+            clearInterval(slideInterval);
+            slideIndex = n;
+            showSlide(slideIndex);
+            startAutoSlideshow();
+        }
+        
+        // Auto slideshow - 1.5 seconds per image as requested
+        function startAutoSlideshow() {
+            slideInterval = setInterval(() => {
+                slideIndex++;
+                showSlide(slideIndex);
+            }, 1500); // Change slide every 1.5 seconds (1500ms) as requested
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+        
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.querySelector('.slideshow-container').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        document.querySelector('.slideshow-container').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) changeSlide(1); // Swipe left
+            if (touchEndX > touchStartX + 50) changeSlide(-1); // Swipe right
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initSlideshow);
+        
+        // Pause slideshow on hover
+        document.querySelector('.slideshow-container').addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        document.querySelector('.slideshow-container').addEventListener('mouseleave', () => {
+            startAutoSlideshow();
+        });
+    </script>
+</body>
+</html>
